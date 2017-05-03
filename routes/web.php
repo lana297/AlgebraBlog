@@ -12,13 +12,19 @@
 */
 
 Route::get('/', function () {
-	$items = DB::table('items')->get();
-	
-    return view('welcome', compact('items'));
+
+    return view('welcome');
 });
 
-Route::get('item/{id}', function($id) {
-	$item = DB::table('items')->find($id);
-	
-	return view('items.show', compact('item'));
-});
+Route::get('/items', 'ItemsController@index');
+
+
+Route::get('/items/new', 'ItemsController@create');
+Route::post('/items/new', 'ItemsController@store');
+
+Route::get('/items/{id}', 'ItemsController@show');
+
+Route::get('/item/{id}/edit', 'ItemsController@edit');
+Route::post('/item/{id}/edit', 'ItemsController@update');
+
+Route::get('/item/{id}', 'ItemsController@destroy');
