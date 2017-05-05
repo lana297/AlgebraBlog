@@ -28,3 +28,9 @@ Route::get('/item/{id}/edit', 'ItemsController@edit');
 Route::post('/item/{id}/edit', 'ItemsController@update');
 
 Route::get('/item/{id}', 'ItemsController@destroy');
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
