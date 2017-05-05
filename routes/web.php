@@ -27,7 +27,7 @@ Route::get('/items/{id}', 'ItemsController@show');
 Route::get('/item/{id}/edit', 'ItemsController@edit');
 Route::post('/item/{id}/edit', 'ItemsController@update');
 
-Route::get('/item/{id}', 'ItemsController@destroy');
+Route::get('/item/{id}/del', 'ItemsController@destroy');
 
 
 

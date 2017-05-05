@@ -7,7 +7,15 @@
 			<h2>{{ $item ->title }}</h2>
 			<p>{{$item->created_at}}</p>
 			<div>{{ $item->content}}</div>
-		</div>
+			
+			<form>
+			@if (auth()->id() == $item->user_id )
+				<a href="{{ url('item/'.$item->id.'/del') }}" class="btn btn-danger">Obriši</a>
+			
+			@endif
+				</a>
+			</form>	
+			</div>
 	</div>
 </div>
 @endsection
